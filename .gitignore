@@ -44,5 +44,9 @@ Temporary Items
 
 # Build results
 build-*/
+build/
 [Dd]ebug/
 [Rr]elease/
+
+# User Files
+*.pro.user
