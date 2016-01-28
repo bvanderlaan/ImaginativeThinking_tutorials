@@ -26,14 +26,14 @@ namespace ImaginativeThinking
         class QDESIGNER_WIDGET_EXPORT HappyWidget : public QWidget
         {
             Q_OBJECT
-            Q_PROPERTY(double diameter READ getDiameterInPixels WRITE setDiameterInPixels)
+            Q_PROPERTY(int diameter READ getDiameterInPixels WRITE setDiameterInPixels)
             Q_PROPERTY(QColor color READ getColour WRITE setColour)
         public:
             explicit HappyWidget(QWidget *parent = 0);
             virtual ~HappyWidget() {}
 
-            double getDiameterInPixels() const;
-            void setDiameterInPixels( double diameter );
+            int getDiameterInPixels() const;
+            void setDiameterInPixels( int diameter );
 
             QColor getColour() const;
             void setColour( const QColor& colour );
@@ -46,7 +46,6 @@ namespace ImaginativeThinking
             void paintEvent(QPaintEvent* event) Q_DECL_OVERRIDE;
 
         private:
-            double m_diameterInPixels;
             QColor m_colour;
         };
     }

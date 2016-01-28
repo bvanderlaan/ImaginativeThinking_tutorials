@@ -20,22 +20,21 @@ using namespace ImaginativeThinking::Widgets;
 
 HappyWidget::HappyWidget(QWidget *parent) :
     QWidget(parent),
-    m_diameterInPixels(100),
     m_colour( QColor("yellow") )
 {
 
 }
 
-double HappyWidget::getDiameterInPixels() const
+int HappyWidget::getDiameterInPixels() const
 {
-    return m_diameterInPixels;
+    return this->size().width();
 }
 
-void HappyWidget::setDiameterInPixels(double diameter)
+void HappyWidget::setDiameterInPixels(int diameter)
 {
-    if ( m_diameterInPixels != diameter )
+    if ( this->size().width() != diameter )
     {
-        m_diameterInPixels = diameter;
+        this->resize( diameter, diameter );
         update();
     }
 }
@@ -61,7 +60,7 @@ int HappyWidget::heightForWidth(int width) const
 
 QSize HappyWidget::sizeHint() const
 {
-    return QSize( m_diameterInPixels, m_diameterInPixels );
+    return this->size();
 }
 
 QSize HappyWidget::minimumSizeHint() const
@@ -75,8 +74,8 @@ void HappyWidget::paintEvent(QPaintEvent *event)
 
     int x( 0 );
     int y( 0 );
-    int width = x + m_diameterInPixels;
-    int height = y + m_diameterInPixels;
+    int width = x + this->size().width();
+    int height = y + this->size().height();
     QBrush brush( m_colour );
 
     QPainter painter(this);
