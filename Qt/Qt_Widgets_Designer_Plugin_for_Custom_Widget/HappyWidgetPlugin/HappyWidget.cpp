@@ -15,12 +15,15 @@
  */
 #include <QPainter>
 #include "HappyWidget.hpp"
+#include "Hair.hpp"
 
+using namespace ImaginativeThinking;
 using namespace ImaginativeThinking::Widgets;
 
 HappyWidget::HappyWidget(QWidget *parent) :
     QWidget(parent),
     m_colour( QColor("yellow") )
+//    m_scalpHair( new Hair(this) )
 {
 
 }
@@ -51,6 +54,21 @@ void HappyWidget::setColour(const QColor &colour)
         m_colour = colour;
         update();
     }
+}
+
+void HappyWidget::setScalpHair(Hair hair)
+{
+//    if ( *m_scalpHair != *hair )
+    if ( m_scalpHair != hair )
+    {
+        m_scalpHair = hair;
+        update();
+    }
+}
+
+Hair HappyWidget::getScalpHair() const
+{
+    return m_scalpHair;
 }
 
 int HappyWidget::heightForWidth(int width) const

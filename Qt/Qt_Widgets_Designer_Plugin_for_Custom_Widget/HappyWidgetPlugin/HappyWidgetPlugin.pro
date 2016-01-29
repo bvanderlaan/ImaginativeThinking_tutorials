@@ -18,8 +18,14 @@ INCLUDEPATH += .
 
 SOURCES += \
     HappyPlugin.cpp \
-    HappyWidget.cpp
+    HappyWidget.cpp \
+    Hair.cpp \
+    HappyPropertySheetExtension.cpp \
+    HappyExtensionFactory.cpp
 
 HEADERS += \
     HappyPlugin.hpp \
-    HappyWidget.hpp
+    HappyWidget.hpp \
+    Hair.hpp \
+    HappyPropertySheetExtension.hpp \
+    HappyExtensionFactory.hpp

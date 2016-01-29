@@ -43,6 +43,12 @@ namespace ImaginativeThinking
                 QIcon icon() const Q_DECL_OVERRIDE;
                 bool isContainer() const Q_DECL_OVERRIDE;
                 QWidget *createWidget(QWidget *parent) Q_DECL_OVERRIDE;
+                void initialize(QDesignerFormEditorInterface *core) Q_DECL_OVERRIDE;
+                bool isInitialized() const Q_DECL_OVERRIDE;
+//                QString domXml() const Q_DECL_OVERRIDE;
+
+            private:
+                bool m_isInitialized;
             };
         }
     }

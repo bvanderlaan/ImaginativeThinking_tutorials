@@ -18,16 +18,20 @@
 
 #include <QWidget>
 #include <QtDesigner/QtDesigner>
+#include "Hair.hpp"
 
 namespace ImaginativeThinking
 {
+    class Hair;
     namespace Widgets
     {
         class QDESIGNER_WIDGET_EXPORT HappyWidget : public QWidget
         {
             Q_OBJECT
-            Q_PROPERTY(int diameter READ getDiameterInPixels WRITE setDiameterInPixels)
-            Q_PROPERTY(QColor color READ getColour WRITE setColour)
+//            Q_PROPERTY(int diameter READ getDiameterInPixels WRITE setDiameterInPixels)
+//            Q_PROPERTY(QColor colour READ getColour WRITE setColour)
+//            Q_PROPERTY(Hair scalpHair READ getScalpHair WRITE setScalpHair)
+
         public:
             explicit HappyWidget(QWidget *parent = 0);
             virtual ~HappyWidget() {}
@@ -38,6 +42,9 @@ namespace ImaginativeThinking
             QColor getColour() const;
             void setColour( const QColor& colour );
 
+            Hair getScalpHair() const;
+            void setScalpHair( Hair hair );
+
             int heightForWidth(int width) const Q_DECL_OVERRIDE;
             QSize sizeHint() const Q_DECL_OVERRIDE;
             QSize minimumSizeHint() const Q_DECL_OVERRIDE;
@@ -47,6 +54,7 @@ namespace ImaginativeThinking
 
         private:
             QColor m_colour;
+            Hair m_scalpHair;
         };
     }
 }
